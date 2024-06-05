@@ -230,7 +230,7 @@ const Page = () => {
               <a href="https://vercel.com/" target="_blank">
                 Vercel
               </a>{" "}
-              for fast and reliable hosting. Vercel's platform provided an
+              for fast and reliable hosting. Vercel&apos;s platform provided an
               excellent environment for deploying the app, ensuring it was both
               accessible and performant for users.
             </p>
@@ -262,8 +262,8 @@ const Page = () => {
               for developers, designed to save time and simplify the process of
               repository management. I hope Repo Purge proves to be a valuable
               resource for the developer community. Its development journey was
-              both challenging and rewarding, and I'm excited to share it with
-              others who may benefit from its functionality.
+              both challenging and rewarding, and I&apos;m excited to share it
+              with others who may benefit from its functionality.
             </p>
             <p>
               Feel free to try out{" "}
