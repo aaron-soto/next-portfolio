@@ -6,8 +6,11 @@ import SectionHeading from "../SectionHeading";
 
 export default function ExperienceSection() {
   return (
-    <div className="container py-20">
-      <SectionHeading title="Experience" description="This is my professional experience in the web development world." />
+    <div className="container py-8 sm:py-20">
+      <SectionHeading
+        title="Experience"
+        description="This is my professional experience in the web development world."
+      />
 
       <div className="space-y-8">
         {EXPERIENCE.map((entry, idx) => {

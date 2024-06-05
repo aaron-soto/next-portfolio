@@ -5,6 +5,7 @@ import SkillsSection from "@/components/sections/Skills-section";
 import ProjectsSection from "@/components/sections/Projects-section";
 import QuoteSection from "@/components/sections/Quote-section";
 import SpotifyNowPlaying from "@/components/Spotify-Now-Playing";
+import ContactSection from "@/components/sections/Contact-section";
 
 export default function Home() {
   return (
@@ -23,6 +24,8 @@ export default function Home() {
         <QuoteSection />
 
         {/* <SpotifyNowPlaying /> */}
+
+        <ContactSection />
       </main>
     </div>
   );

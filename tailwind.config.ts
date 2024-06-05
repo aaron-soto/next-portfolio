@@ -13,15 +13,17 @@ const config = {
     container: {
       center: true,
       padding: {
-        DEFAULT: '2rem',
-        sm: '1rem',
-        md: '1.5rem',
+        DEFAULT: ".5rem",
+        sm: "2rem",
+        lg: "3rem",
+        xl: "4rem",
+        "2xl": "5rem",
       },
       screens: {
-        sm: '100%',
-        md: '100%',
-        lg: '800px',
-        xl: '960px',
+        sm: "100%",
+        md: "100%",
+        lg: "800px",
+        xl: "960px",
       },
     },
     extend: {
@@ -77,10 +79,17 @@ const config = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        ping: {
+          "75%, 100%": {
+            transform: "scale(2)",
+            opacity: "0",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        ping: "ping 1s cubic-bezier(0, 0, 0.2, 1) infinite",
       },
     },
   },

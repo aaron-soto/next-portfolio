@@ -1,14 +1,14 @@
-import { PROJECTS } from '@/lib/data';
-import { Github, Link } from 'lucide-react';
-import { Button, buttonVariants } from '../ui/button';
-import { cn } from '@/lib/utils';
-import Image from 'next/image';
-import Tag from '../Tag';
-import SectionHeading from '../SectionHeading';
+import { PROJECTS } from "@/lib/data";
+import { Github, Link } from "lucide-react";
+import { Button, buttonVariants } from "../ui/button";
+import { cn } from "@/lib/utils";
+import Image from "next/image";
+import Tag from "../Tag";
+import SectionHeading from "../SectionHeading";
 
 const ProjectsSection = () => {
   return (
-    <div className="container py-20">
+    <div className="container py-8 sm:py-20">
       <SectionHeading
         title="Projects"
         description="Stay up to date with my latest projects and experiments."
@@ -21,7 +21,9 @@ const ProjectsSection = () => {
               Featured
             </Tag>
           </div>
-          <h3 className="text-lg font-semibold mb-2 group-hover:underline">Repo Purge</h3>
+          <h3 className="text-lg font-semibold mb-2 group-hover:underline">
+            Repo Purge
+          </h3>
 
           <p className="text-gray-400 mb-8">
             RepoPurge is a web application designed to streamline the process of
@@ -51,8 +53,8 @@ const ProjectsSection = () => {
           <div className="flex gap-2 mt-4">
             <a
               className={buttonVariants({
-                size: 'sm',
-                className: 'text-sm',
+                size: "sm",
+                className: "text-sm",
               })}
               href="https://repopurge.com"
             >
@@ -61,9 +63,9 @@ const ProjectsSection = () => {
 
             <a
               className={buttonVariants({
-                size: 'sm',
-                variant: 'secondary',
-                className: 'text-sm',
+                size: "sm",
+                variant: "secondary",
+                className: "text-sm",
               })}
               href="https://github.com/aaron-soto/repo-purge"
             >
@@ -73,12 +75,33 @@ const ProjectsSection = () => {
         </div>
 
         {PROJECTS.map((project, idx) => (
-          <div key={idx} className="p-4 border border-gray-800 flex flex-col">
+          <div
+            key={idx}
+            className="p-4 border border-gray-800 flex flex-col col-span-2"
+          >
             <div className="flex justify-between">
               <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
               <div className="flex gap-4">
-                <Github className="w-4 h-4 " />
-                <Link className="w-4 h-4 " />
+                <a
+                  className={buttonVariants({
+                    size: "sm",
+                    variant: "link",
+                  })}
+                  href={project.githubLink}
+                  target="_blank"
+                >
+                  <Github className="w-4 h-4 " />
+                </a>
+                <a
+                  className={buttonVariants({
+                    size: "sm",
+                    variant: "link",
+                  })}
+                  href={project.demoLink}
+                  target="_blank"
+                >
+                  <Link className="w-4 h-4 " />
+                </a>
               </div>
             </div>
             <p className="text-gray-400 mb-8">{project.description}</p>

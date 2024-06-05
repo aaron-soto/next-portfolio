@@ -1,10 +1,10 @@
-import { SKILLS } from '@/lib/data';
-import Tag from '../Tag';
-import SectionHeading from './../SectionHeading';
+import { SKILLS } from "@/lib/data";
+import Tag from "../Tag";
+import SectionHeading from "./../SectionHeading";
 
 export default function SkillsSection() {
   return (
-    <div className="container py-20">
+    <div className="container py-8 sm:py-20">
       <SectionHeading
         title="My Skillset"
         description="My skill set is always evolving as I spend my free time learning new

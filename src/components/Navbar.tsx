@@ -1,8 +1,9 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import ThemeToggle from "./ThemeToggle";
+import Link from "next/link";
 
 export default function Navbar() {
   const [isScrolledToTop, setIsScrolledToTop] = useState(true);
@@ -15,7 +16,9 @@ export default function Navbar() {
         document.querySelector("#navbar")?.classList.add(`bg-black/${opacity}`);
         document.querySelector("#navbar")?.classList.add("backdrop-blur-lg");
       } else {
-        document.querySelector("#navbar")?.classList.remove(`bg-black/${opacity}`);
+        document
+          .querySelector("#navbar")
+          ?.classList.remove(`bg-black/${opacity}`);
         document.querySelector("#navbar")?.classList.remove("backdrop-blur-lg");
       }
     };
@@ -35,18 +38,33 @@ export default function Navbar() {
       <div className="container flex justify-between">
         <span className="my-auto text-xl font-semibold">Aaron Soto</span>
         <div className="buttons">
-          <Button className=" dark:text-white" variant="link">
+          <Link
+            href="/"
+            className={buttonVariants({
+              variant: "link",
+              className: "dark:text-white",
+            })}
+          >
             Home
-          </Button>
-          <Button className=" dark:text-white" variant="link">
-            About
-          </Button>
-          <Button className=" dark:text-white" variant="link">
-            Skills
-          </Button>
-          <Button className=" dark:text-white" variant="link">
-            Experience
-          </Button>
+          </Link>
+          <Link
+            href="/writing"
+            className={buttonVariants({
+              variant: "link",
+              className: "dark:text-white",
+            })}
+          >
+            Writing
+          </Link>
+          <Link
+            href="contact"
+            className={buttonVariants({
+              variant: "link",
+              className: "dark:text-white",
+            })}
+          >
+            Contact
+          </Link>
           {/* <ThemeToggle></ThemeToggle> */}
         </div>
       </div>

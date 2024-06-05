@@ -3,14 +3,17 @@ import SectionHeading from "../SectionHeading";
 export default function AboutSection() {
   return (
     <div>
-      <div className="container py-20">
-        <SectionHeading title="About" description="Alittle about me" />
+      <div className="container py-8 sm:py-20">
+        <SectionHeading title="About" />
         <p className="mb-4 text-white/70">
           I&apos;m a web developer based in Arizona with a passion for creating
-          innovative web solutions. After serving as a sergeant in the 75th
-          Ranger Regiment, I transitioned to web development, finding excitement
-          in the creative challenges it offers. I specialize in technologies
-          like Angular, C#/.NET, JavaScript, and AWS, constantly building new
+          innovative web solutions. After serving as a{" "}
+          <span className="underline text-yellow-100">
+            sergeant in the 75th Ranger Regiment
+          </span>
+          , I transitioned to web development, finding excitement in the
+          creative challenges it offers. I specialize in technologies like
+          Nextjs, Angular, C#/.NET, JavaScript, and AWS, constantly building new
           projects and learning the latest advancements to enhance my skills.
         </p>
         <p className="mb-4 text-white/70">
