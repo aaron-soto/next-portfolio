@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Blobs from "../blobs";
 import { Button, buttonVariants } from "../ui/button";
+import DownloadResumeButton from "@/components/DownloadResumeButton";
 
 const HeroSection = () => {
   return (
@@ -26,9 +27,7 @@ const HeroSection = () => {
         >
           Let&apos;s work together
         </Link>
-        <Button variant="secondary" className="ml-4 rounded-lg">
-          Download Resume
-        </Button>
+        <DownloadResumeButton />
       </div>
 
       <Blobs />
