@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('/fonts/fonts.css');
+@import url("/fonts/fonts.css");
 
 @layer base {
   :root {
@@ -62,7 +62,7 @@
 }
 
 body {
-  font-family: 'Graphik', sans-serif;
+  font-family: "Graphik", sans-serif;
 }
 
 :root {
@@ -75,7 +75,7 @@ p {
 
 .grainy {
   background-color: white;
-  background-image: url('../../public/images/grain.png');
+  background-image: url("../../public/images/grain.png");
   background-size: 300px 300px;
   background-position: 0 0;
   color: black;
@@ -93,7 +93,7 @@ blockquote:before {
   font-size: 3rem;
   position: absolute;
   right: 100.3%;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
   color: #ffffff6d;
 }
 
@@ -135,8 +135,11 @@ blockquote:before {
 .blobContainer {
   position: absolute;
   width: 100%;
+  max-width: 100vw;
   height: 100%;
   z-index: -2;
+  overflow-y: visible;
+  overflow-x: clip;
 }
 
 .blob {
@@ -174,12 +177,14 @@ blockquote:before {
   top: 0;
   left: 0;
   width: 100%;
+  max-width: 100vw;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.689);
   z-index: -1;
 }
 
 .blobs-bg {
+  max-width: 100vw;
   position: fixed;
   top: 0;
   left: 0;

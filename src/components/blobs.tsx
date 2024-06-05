@@ -1,10 +1,10 @@
 // components/Blobs.js
-import { cn } from '@/lib/utils';
-import React from 'react';
+import { cn } from "@/lib/utils";
+import React from "react";
 
 const Blobs = ({ className }: { className?: string }) => {
   return (
-    <div className={cn(className, "blobContainer")}>
+    <div className={cn(className, "blobContainer ")}>
       <div className="blob blobR"></div>
       <div className="blob blobG"></div>
       <div className="blob blobB"></div>
@@ -18,11 +18,7 @@ export const BlobsBgs = () => {
       <div className="blob-overlay"></div>
       <div className="blobs-bg"></div>
     </>
-  )
-}
+  );
+};
 
 export default Blobs;
-
-
-
-
