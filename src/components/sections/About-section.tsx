@@ -1,14 +1,14 @@
-import SectionHeading from "../SectionHeading";
+import SectionHeading from '../SectionHeading';
 
 export default function AboutSection() {
   return (
     <div>
-      <div className="container py-8 sm:py-20">
+      <div className="py-8 sm:py-20 container">
         <SectionHeading title="About" />
         <p className="mb-4 text-white/70">
           I&apos;m a web developer based in Arizona with a passion for creating
-          innovative web solutions. After serving as a{" "}
-          <span className="underline text-yellow-100">
+          innovative web solutions. After serving as a{' '}
+          <span className="text-yellow-100 underline">
             sergeant in the 75th Ranger Regiment
           </span>
           , I transitioned to web development, finding excitement in the
@@ -23,13 +23,11 @@ export default function AboutSection() {
           opportunities or questions.
         </p>
 
-        <a href="#!">Read more...</a>
-
-        {/* <div className="relative p-[4px] rounded-[14px] bg-white h-96 border border-gray-400 my-2">
+        {/* <div className="relative border-gray-400 bg-white my-2 p-[4px] border rounded-[14px] h-96">
           <iframe
             src="https://www.loom.com/embed/c641dba088fd4ccf9b573507885d255c?sid=98f33874-4eb6-436b-bb39-0fdecd6dbb59"
             allowFullScreen
-            className="h-full w-full rounded-[10px]"
+            className="rounded-[10px] w-full h-full"
           ></iframe>
         </div> */}
       </div>
