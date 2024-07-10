@@ -14,6 +14,7 @@ const ContactSection = () => {
     name: '',
     email: '',
     message: '',
+    honeypot: '',
   });
 
   const handleChange = (
@@ -26,6 +27,7 @@ const ContactSection = () => {
     to: string;
     subject: string;
     text: string;
+    honeypot?: string;
   }) => {
     const response = await fetch('/api/send-email', {
       method: 'POST',
@@ -48,7 +50,7 @@ const ContactSection = () => {
       text: `${emailData.name} has signed up with the email: ${emailData.email}`,
     });
 
-    setEmailData({ name: '', email: '', message: '' });
+    setEmailData({ name: '', email: '', message: '', honeypot: '' });
   };
 
   const handleError = () => {
@@ -63,11 +65,18 @@ const ContactSection = () => {
     e.preventDefault();
     setLoading(true);
 
+    if (emailData.honeypot) {
+      handleError();
+      setLoading(false);
+      return;
+    }
+
     try {
       const email = {
         to: emailData.email,
         subject: `New message from ${emailData.name}`,
         text: emailData.message,
+        honeypot: emailData.honeypot,
       };
 
       const result = await sendEmail(email);
@@ -118,6 +127,13 @@ const ContactSection = () => {
             value={emailData.message}
             onChange={handleChange}
             required
+          />
+          <input
+            type="text"
+            name="honeypot"
+            value={emailData.honeypot}
+            onChange={handleChange}
+            style={{ display: 'none' }}
           />
           <Button type="submit" variant="secondary" disabled={loading}>
             {loading ? 'Sending...' : 'Send Message'}
