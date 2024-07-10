@@ -41,6 +41,10 @@ export default function Home() {
           </div>
         </div>
 
+        {/* <div className="py-24 container">
+          <Advice />
+        </div> */}
+
         <ContactSection />
       </main>
     </div>

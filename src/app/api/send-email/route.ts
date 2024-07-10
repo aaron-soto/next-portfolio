@@ -1,33 +1,15 @@
-// app/api/send-email/route.js
-import nodemailer from "nodemailer";
-import { NextResponse } from "next/server";
 
-export async function POST(req: any) {
-  const { email, subject, message } = await req.json();
+import { sendMail } from '@/lib/mailer';
+import { NextRequest } from 'next/server';
 
-  // Create a transporter
-  const transporter = nodemailer.createTransport({
-    host: "smtp.office365.com",
-    port: 587,
-    secure: false,
-    auth: {
-      user: process.env.NODEMAILER_EMAIL,
-      pass: process.env.NODEMAILER_PASSWORD,
-    },
-  });
-
-  // Set up email options
-  const mailOptions = {
-    from: process.env.NODEMAILER_EMAIL,
-    to: process.env.NODEMAILER_EMAIL,
-    subject: subject,
-    text: message,
-  };
+export async function POST(req: NextRequest) {
+  const { to, from, subject, text, templateId, dynamicTemplateData } = await req.json();
 
   try {
-    await transporter.sendMail(mailOptions);
-    return NextResponse.json({ status: "success" });
+    await sendMail({ to, from, subject, text, templateId, dynamicTemplateData });
+    return new Response(JSON.stringify({ success: true }), { status: 200 });
   } catch (error: any) {
-    return NextResponse.json({ status: "error", message: error.message });
+    console.error('Error sending email:', error);
+    return new Response(JSON.stringify({ success: false, error: error.message }), { status: 500 });
   }
 }

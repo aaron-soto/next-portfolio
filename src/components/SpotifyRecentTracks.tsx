@@ -21,7 +21,7 @@ const SpotifyRecentTracks = async () => {
           <li key={index}>
             <Link
               href={item.track.uri}
-              className="flex gap-2 bg-white/5 hover:bg-white/10 my-2 p-2 rounded-[10px] w-full transition-colors duration-300 cursor-pointer ease-in-out group"
+              className="flex gap-2 bg-white/5 hover:bg-white/10 my-2 p-2 rounded-[10px] w-full transition-colors duration-100 cursor-pointer ease-in-out group"
             >
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
@@ -30,8 +30,8 @@ const SpotifyRecentTracks = async () => {
                 alt={`${item.track.name} album cover`}
               />
               <div>
-                <p className="text-xs">{item.track.name}</p>
-                <p className="text-muted-foreground text-xs">
+                <p className="line-clamp-1 text-xs">{item.track.name}</p>
+                <p className="line-clamp-1 text-muted-foreground text-xs">
                   {item.track.artists.map(a => a.name).join(', ')}
                 </p>
               </div>
